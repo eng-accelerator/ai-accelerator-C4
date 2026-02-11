@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #050505;
+    --foreground: #ebebeb;
+    --card: #111111;
+    --card-foreground: #ebebeb;
+    --popover: #111111;
+    --popover-foreground: #ebebeb;
+    --primary: #FF6B50;
+    --primary-foreground: #000000;
+    --secondary: #1a1a1a;
+    --secondary-foreground: #ebebeb;
+    --muted: #161616;
+    --muted-foreground: #888888;
+    --accent: #FF6B50;
+    --accent-foreground: #000000;
+    --destructive: #dc2626;
+    --border: #333333;
+    --input: #333333;
+    --ring: #FF6B50;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  ::selection {
+    background-color: #FF6B50;
+    color: white;
+  }
+}
