@@ -1,5 +1,5 @@
-from openai import OpenAI
 from config import BASE_URL, MODEL
+from openai import OpenAI
 
 
 def get_client(api_key):

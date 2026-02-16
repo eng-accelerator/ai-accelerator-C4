@@ -1,6 +1,6 @@
 import streamlit as st
-from config import PAGE_TITLE, PAGE_ICON
 from chat import get_client, stream_response
+from config import PAGE_ICON, PAGE_TITLE
 
 st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 st.title(f"{PAGE_ICON} {PAGE_TITLE}")
@@ -25,6 +25,8 @@ if prompt := st.chat_input("Ask me anything..."):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        response_text = st.write_stream(stream_response(client, st.session_state.messages))
+        response_text = st.write_stream(
+            stream_response(client, st.session_state.messages)
+        )
 
     st.session_state.messages.append({"role": "assistant", "content": response_text})
